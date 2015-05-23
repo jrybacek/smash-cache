@@ -1,6 +1,14 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <div class="list card">
+		<label class="item item-input">
+			<span class="input-label">Average Party Level</span>
+			<input type="tel">
+		</label>
+		<div class="list">
+      <div class="item item-divider">Game Pace, select value: {{ data.gamePace }}</div>
+			<ion-radio ng-repeat="item in gamePaceList" ng-model="data.gamePace" ng-value="item.value">{{ item.text }}</ion-radio>
+		</div>
+		<div class="list card">
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
         <div>

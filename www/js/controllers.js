@@ -1,6 +1,15 @@
 angular.module('starter.controllers', [])
 
-.controller('DashboardCtrl', function($scope) {})
+.controller('DashboardCtrl', function($scope, $ionicPopover) {
+	$scope.gamePaceList = [
+		{ text: 'Slow', value: 'slow' },
+		{ text: 'Medium', value: 'medium' },
+		{ text: 'Fast', value: 'fast' }
+	];
+	$scope.data = {
+		gamePace: 'medium'
+  };
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
