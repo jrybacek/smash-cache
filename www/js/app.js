@@ -16,7 +16,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleLightContent();
+      StatusBar.styleDefault();
     }
   });
 })
@@ -29,55 +29,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
+	// Setup application
+  .state('app', {
+    url: '/app',
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
   })
+	.state('app.treasure', {
+		url: '/treasure',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/treasure.html',
+				controller: 'TreasureCtrl'
+			}
+		}
+	})
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.dashboard', {
-    url: '/dashboard',
-    views: {
-      'tab-dashboard': {
-        templateUrl: 'templates/tab-dashboard.html',
-        controller: 'DashboardCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dashboard');
+	// if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/treasure');
 
 });

@@ -1,1 +1,73 @@
 /* Empty. Add your own CSS if you like */
+
+/*
+* Help references
+*/
+.help-reference {
+	font-size: 75%;
+}
+
+/*
+* Create button bars
+*/
+.button-bar > .item-radio .item-content {
+	padding: 0px;
+	background: none;
+}
+.button-bar .button {
+	min-height: 0;
+}
+.button-bar > .item-radio.button {
+	color: #444;
+	padding: 0;
+}
+.button-bar > .item-radio .radio-icon {
+	display: none;
+}
+.button-bar > .card .item:last-child, .list-inset .item:last-child {
+	margin-bottom: 0;
+}
+
+/*
+* Add scale-in animation option
+*/
+
+.scale-in {
+	-webkit-transform: scale(0.0);
+	transform: scale(0.0);
+	opacity: 0;
+}
+.scale-in.ng-enter, .scale-in > .ng-enter {
+	-webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+ 	transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+}
+.scale-in.ng-enter-active, .scale-in > .ng-enter-active {
+	-webkit-transform: scale(1);
+ 	transform: scale(1);
+	opacity: 1;
+}
+.scale-in.ng-leave, .scale-in > .ng-leave {
+	-webkit-transition: all ease-in-out 250ms;
+ 	transition: all ease-in-out 250ms;
+}
+
+/*
+* Add slide-in-right animation option
+*/
+
+.slide-in-right {
+  -webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+}
+.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+  -webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
+}
