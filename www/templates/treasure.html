@@ -1,0 +1,45 @@
+<ion-view>
+	<ion-nav-title>
+		<div>
+			Treasure Generator
+		</div>
+	</ion-nav-title>
+	<ion-nav-buttons side="right">
+		<button class="button" ng-click="toggleHelp()">?</button>
+	</ion-nav-buttons>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Encounter Level</span>
+				<span class="help-reference" ng-show="local.showHelp"> (COR pg. 397 12-1)</span>
+				<input type="tel" ng-model="local.encounterLevel" placeholder="encounter level">
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Type</span>
+				<span class="help-reference" ng-show="local.showHelp"> (UE pg. 361)</span>
+				<label class="item item-input item-select">
+					<select ng-model="local.monster" ng-options="monster.title for monster in monsters" name="monster" ng-click="selectMonster(monster)">
+					</select>
+				</label>
+			</label>
+<!--
+			<ion-list>
+				<ion-radio ng-repeat="item in monsters" ng-model="local.monster" ng-value="item" ng-click="selectMonster(item)" name="monster">
+					{{ item.title }}
+				</ion-radio>
+			</ion-list>
+-->
+		</div>
+		<button class="button button-full button-energized" ng-click="getLoot()">Continue</button>
+		<p>
+			<strong>Data in TreasureCtrl controller:</strong><br />
+			getTreasureValue(): {{ getTreasureValue() }}<br />
+			encounterLevel: {{ local.encounterLevel }}<br />
+			monster: {{ local.monster }}<br />
+			monsters: {{ local.monsters }}<br />
+			pace: {{ local.pace }}<br />
+			budget: {{ local.budget }}<br />
+			showHelp: {{ local.showHelp }}<br />
+		</p>
+  </ion-content>
+</ion-view>

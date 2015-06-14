@@ -1,0 +1,28 @@
+<ion-view>
+	<ion-content>
+		<div class="list list-inset">
+			<div class="item item-divider">
+				Pace
+			</div>
+			<div class="button-bar padding row item">
+				<ion-radio ng-repeat="item in paces" ng-model="settings.pace" ng-value="item" ng-click="selectPace(item)" class="button button-outline" name="pace">
+					{{ item.title }}
+				</ion-radio>
+			</div>
+			<div class="item item-divider">
+				Budget
+			</div>
+			<ion-list>
+				<ion-radio ng-repeat="item in budgets" ng-model="settings.budget" ng-value="item" ng-click="selectBudget(item)" name="budget">
+					{{ item.title }}
+				</ion-radio>
+			</ion-list>
+		</div>
+		<button class="button button-full button-energized" ng-click="closeSettings()">Continue</button>
+		<p>
+			<strong>Data in AppCtrl controller:</strong><br />
+			Pace: {{ settings.pace }}<br />
+			Budget: {{ settings.budget }}<br />
+		</p>
+  </ion-content>
+</ion-view>
